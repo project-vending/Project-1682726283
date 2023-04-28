@@ -1,0 +1,16 @@
+
+import csv
+import os
+
+# Define file path
+file_path = os.path.join('real-time-data-processing', 'results', 'results.csv')
+
+# Define header row
+header = ['Column 1', 'Column 2', 'Column 3']
+
+# Write header row to file
+with open(file_path, 'w', newline='') as file:
+    writer = csv.writer(file)
+    writer.writerow(header)
+    
+print('File created successfully')

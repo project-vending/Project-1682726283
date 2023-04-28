@@ -1,0 +1,21 @@
+
+import csv
+
+# Define the file path
+file_path = './real-time-data-processing/data/data.csv'
+
+# Define the data to write
+data = [
+    {'id': 1, 'name': 'John', 'age': 30},
+    {'id': 2, 'name': 'Mary', 'age': 25},
+    {'id': 3, 'name': 'David', 'age': 40}
+]
+
+# Write the data to the file
+with open(file_path, 'w', newline='') as csvfile:
+    fieldnames = ['id', 'name', 'age']
+    writer = csv.DictWriter(csvfile, fieldnames=fieldnames)
+
+    writer.writeheader()
+    for row in data:
+        writer.writerow(row)
